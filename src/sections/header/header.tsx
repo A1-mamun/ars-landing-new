@@ -16,7 +16,7 @@ import {
   DropdownItem,
   DropdownSection,
 } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navLinks } from "@/data";
 import Image from "next/image";
 import { ICONS } from "@/utils/icons";
@@ -26,6 +26,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const allowExpansion = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -34,8 +35,10 @@ const Header = () => {
       if (window.scrollY > 20) {
         setIsScrolled(true);
         setIsExpanded(false);
+        allowExpansion.current = true;
       } else {
         setIsScrolled(false);
+        allowExpansion.current = false;
       }
     };
 
@@ -71,7 +74,7 @@ const Header = () => {
             <div
               className={`relative ${
                 isExpanded
-                  ? "bg-red-500 lg:w-[760px] xl:w-[840px] h-12  duration-1000"
+                  ? "bg-red-500 lg:w-[750px] xl:w-[860px] h-12  duration-1000"
                   : `${
                       isScrolled
                         ? "bg-red-500 w-20 h-12  duration-1000 "
@@ -81,7 +84,7 @@ const Header = () => {
             >
               <div className="flex lg:gap-2 xl:gap-4 absolute right-0 top-1/2 transform -translate-y-1/2">
                 <ul
-                  className={`flex lg:gap-8 xl:gap-10 ${
+                  className={`flex lg:gap-6 xl:gap-10 ${
                     isExpanded
                       ? "opacity-100 duration-1000"
                       : `${
@@ -91,129 +94,145 @@ const Header = () => {
                         }`
                   }`}
                 >
-                  {navLinks.map((item, index) => (
-                    <li key={index}>
-                      {item.name === "Get in Touch" ? (
-                        <Button
-                          as={Link}
-                          href={item.link}
-                          radius="full"
-                          className="bg-cyan-blue-30 border border-ars-cyan font-medium lg:px-5 xl:px-6 lg:text-lg hover:text-gray-300 duration-200 "
-                        >
-                          {item.name}
-                        </Button>
-                      ) : item.name === "Products" ? (
-                        <Dropdown shouldBlockScroll={false}>
-                          <DropdownTrigger endContent={ICONS.chevron}>
-                            <Button
-                              className="pr-0 bg-transparent lg:px-1 xl:px-2 lg:text-lg font-medium hover:text-gray-300 duration-200 "
-                              variant="bordered"
-                            >
-                              Products
-                            </Button>
-                          </DropdownTrigger>
-                          <DropdownMenu
-                            aria-label="Product Categories"
-                            variant="solid"
-                            className="!rounded-xl shadow-lg"
+                  {navLinks.map((item, index) => {
+                    return (
+                      <li key={index}>
+                        {item.name === "Get in Touch" ? (
+                          <Button
+                            as={Link}
+                            href={item.link}
+                            radius="full"
+                            className="bg-cyan-blue-30 border border-ars-cyan font-medium lg:px-5 xl:px-6 lg:text-lg hover:text-gray-300 duration-200 "
+                            isDisabled={
+                              isScrolled ? (isExpanded ? false : true) : false
+                            }
                           >
-                            {/* Section 1: Industrial Mobile Robot */}
-                            <DropdownSection
-                              title="Industrial Mobile Robot"
-                              className="bg-ars-cyan text-white pt-1"
-                              classNames={{
-                                heading: "py-2 px-4",
-                              }}
+                            {item.name}
+                          </Button>
+                        ) : item.name === "Products" ? (
+                          <Dropdown shouldBlockScroll={false}>
+                            <DropdownTrigger endContent={ICONS.chevron}>
+                              <Button
+                                className="pr-0 bg-transparent lg:px-1 xl:px-2 lg:text-lg font-medium hover:text-gray-300 duration-200 "
+                                variant="bordered"
+                                isDisabled={
+                                  isScrolled
+                                    ? isExpanded
+                                      ? false
+                                      : true
+                                    : false
+                                }
+                              >
+                                Products
+                              </Button>
+                            </DropdownTrigger>
+                            <DropdownMenu
+                              aria-label="Product Categories"
+                              variant="solid"
+                              className="!rounded-xl shadow-lg"
                             >
-                              <DropdownItem
-                                key="a-series"
-                                className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4 w-full"
+                              {/* Section 1: Industrial Mobile Robot */}
+                              <DropdownSection
+                                title="Industrial Mobile Robot"
+                                className="bg-ars-cyan text-white pt-1"
+                                classNames={{
+                                  heading: "py-2 px-4",
+                                }}
                               >
-                                <Button
-                                  as={Link}
-                                  href="/products"
-                                  className="w-full py-0 pl-0 flex justify-start"
+                                <DropdownItem
+                                  key="a-series"
+                                  className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4 w-full"
                                 >
-                                  A Series
-                                </Button>
-                              </DropdownItem>
-                              <DropdownItem
-                                key="b-series"
-                                className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
+                                  <Button
+                                    as={Link}
+                                    href="/products"
+                                    className="w-full py-0 pl-0 flex justify-start"
+                                  >
+                                    A Series
+                                  </Button>
+                                </DropdownItem>
+                                <DropdownItem
+                                  key="b-series"
+                                  className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
+                                >
+                                  <Button
+                                    as={Link}
+                                    href="/products"
+                                    className="w-full py-0 pl-0 flex justify-start"
+                                  >
+                                    B Series (Coming Soon)
+                                  </Button>
+                                </DropdownItem>
+                                <DropdownItem
+                                  key="f-series"
+                                  className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
+                                >
+                                  <Button
+                                    as={Link}
+                                    href="/products"
+                                    className="w-full py-0 pl-0 flex justify-start"
+                                  >
+                                    F Series (Coming Soon)
+                                  </Button>
+                                </DropdownItem>
+                              </DropdownSection>
+                              {/* Section 2: No Code Software Platform */}
+                              <DropdownSection
+                                title="No Code Software Platform "
+                                className="bg-ars-cyan text-white pt-1"
+                                classNames={{
+                                  heading: "py-2 px-4",
+                                }}
                               >
-                                <Button
-                                  as={Link}
-                                  href="/products"
-                                  className="w-full py-0 pl-0 flex justify-start"
+                                <DropdownItem
+                                  key="arsfm"
+                                  className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
                                 >
-                                  B Series (Coming Soon)
-                                </Button>
-                              </DropdownItem>
-                              <DropdownItem
-                                key="f-series"
-                                className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
-                              >
-                                <Button
-                                  as={Link}
-                                  href="/products"
-                                  className="w-full py-0 pl-0 flex justify-start"
+                                  <Button
+                                    as={Link}
+                                    href="/products/arsFM"
+                                    className="w-full py-0 pl-0 flex justify-start"
+                                  >
+                                    arsFM
+                                  </Button>
+                                </DropdownItem>
+                                <DropdownItem
+                                  key="arsos"
+                                  className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
                                 >
-                                  F Series (Coming Soon)
-                                </Button>
-                              </DropdownItem>
-                            </DropdownSection>
-                            {/* Section 2: No Code Software Platform */}
-                            <DropdownSection
-                              title="No Code Software Platform "
-                              className="bg-ars-cyan text-white pt-1"
-                              classNames={{
-                                heading: "py-2 px-4",
-                              }}
-                            >
-                              <DropdownItem
-                                key="arsfm"
-                                className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
-                              >
-                                <Button
-                                  as={Link}
-                                  href="/products/arsFM"
-                                  className="w-full py-0 pl-0 flex justify-start"
-                                >
-                                  arsFM
-                                </Button>
-                              </DropdownItem>
-                              <DropdownItem
-                                key="arsos"
-                                className="bg-ars-gray hover:bg-ars-gray/80 text-white py-0 px-4"
-                              >
-                                <Button
-                                  as={Link}
-                                  href="/products/arsFM"
-                                  className="w-full py-0 pl-0 flex justify-start"
-                                >
-                                  arsOs (Coming Soon)
-                                </Button>
-                              </DropdownItem>
-                            </DropdownSection>
-                          </DropdownMenu>
-                        </Dropdown>
-                      ) : (
-                        <Button
-                          as={Link}
-                          href={item.link}
-                          className="bg-transparent lg:px-1 xl:px-2 lg:text-lg font-medium hover:text-gray-300 duration-200 "
-                        >
-                          {item.name}
-                        </Button>
-                      )}
-                    </li>
-                  ))}
+                                  <Button
+                                    as={Link}
+                                    href="/products/arsFM"
+                                    className="w-full py-0 pl-0 flex justify-start"
+                                  >
+                                    arsOs (Coming Soon)
+                                  </Button>
+                                </DropdownItem>
+                              </DropdownSection>
+                            </DropdownMenu>
+                          </Dropdown>
+                        ) : (
+                          <Button
+                            as={Link}
+                            href={item.link}
+                            className="bg-transparent lg:px-1 xl:px-2 lg:text-lg font-medium hover:text-gray-300 duration-200"
+                            isDisabled={
+                              isScrolled ? (isExpanded ? false : true) : false
+                            }
+                          >
+                            {item.name}
+                          </Button>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <Button
                   onClick={toggleMenu}
                   size="sm"
-                  className="bg-transparent my-auto lg:pr-5 xl:pr-7 lg:text-xl hover:text-gray-300 duration-200  "
+                  className="bg-transparent my-auto lg:pr-5 xl:pr-7 lg:text-xl hover:text-gray-300 duration-200"
+                  disabled={!allowExpansion.current}
                 >
                   {isExpanded ? ICONS.close : ICONS.menu}
                 </Button>

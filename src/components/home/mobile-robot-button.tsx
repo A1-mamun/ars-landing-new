@@ -13,7 +13,11 @@ const MobileRobotButton = ({
 }) => {
   return (
     <Tooltip
-      content={`Learn more about the ${title}!`}
+      content={
+        title === "A Series"
+          ? `Learn more about the ${title}!`
+          : `The ${title} is still under development`
+      }
       placement="right"
       showArrow
       radius="full"
@@ -27,7 +31,7 @@ const MobileRobotButton = ({
     >
       <Button
         as={Link}
-        href={link}
+        href={title == "A Series" ? link : "#mobile-robot-section"}
         isIconOnly
         radius="full"
         className="text-white bg-transparent text-2xl md:text-3xl font-bold -ml-1 hover:bg-ars-cyan-60"

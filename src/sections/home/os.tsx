@@ -19,7 +19,12 @@ const OS = () => {
       }}
     >
       <div className="h-full bg-[#000000B3] padding-responsive flex flex-col justify-center gap-1 md:gap-3 lg:gap-5 text-white">
-        <Image width={200} src={OsLogo} alt="Os Logo" />
+        <Image
+          width={200}
+          className="w-32 md:w-40 lg:w-48 mb-1 md:mb-0"
+          src={OsLogo}
+          alt="Os Logo"
+        />
         <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl w-full md:w-4/5 lg:w-3/4 xl:w-3/5 2xl:w-1/2">
           A versatile and user-friendly operating system designed to streamline
           robotic functionalities
@@ -34,7 +39,7 @@ const OS = () => {
           needs.
         </p>
         <div className="flex gap-4 items-center mt-4 md:mt-8 lg:mt-10">
-          <p className="font-medium">Learn About ARS OS</p>
+          <p className="text-sm md:text-base font-medium">Learn About ARS OS</p>
           <Button
             as={Link}
             href="/company"

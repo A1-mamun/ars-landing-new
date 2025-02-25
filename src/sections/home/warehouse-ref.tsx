@@ -12,15 +12,16 @@ const WarehouseRef = () => {
       }}
     >
       <Image
+        fill
         src="/warehouse-no-text-no-bg.png"
         alt="Warehouse Picture"
-        className="absolute top-0 left-0 w-full h-full object-contain object-[center_90%] xxs:object-[center_80%] xs:object-center -z-10"
+        className="absolute inset-0 object-contain object-bottom -z-10"
       />
       {/* Content Container */}
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 lg:gap-20 xl:gap-24 2xl:gap-36 3xl:gap-40 mx-auto text-white">
         {/* Left Column: Title */}
         <div className="flex">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl ">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl ">
             Take it to the next level on-site.
           </h1>
         </div>

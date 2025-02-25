@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const OurMission = () => {
   return (
-    <section className="relative w-full flex flex-col justify-center items-center h-[300px] md:h-[500px] lg:h-screen ">
+    <section className="relative w-full flex flex-col justify-center items-center min-h-[300px] h-screen">
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover object-bottom z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover object-left-bottom z-0"
         src="/videos/home-mission-cropped.mp4"
         height={"100%"}
         width={"100%"}
@@ -35,13 +35,13 @@ const OurMission = () => {
             to propel you forward ahead of the competition.
           </p>
           <div className="flex gap-2 items-center mt-4 md:mt-6 lg:mt-8">
-            <p className="font-semibold">Learn About Us</p>
+            <p className="text-sm md:text-base font-semibold">Learn About Us</p>
             <Button
               as={Link}
               href="/company"
               isIconOnly
               radius="full"
-              className="bg-ars-cyan-60 text-xs md:text-sm text-white font-medium "
+              className=" bg-ars-cyan-60 text-xs md:text-sm text-white font-medium "
             >
               {ICONS.arrow_right}
             </Button>

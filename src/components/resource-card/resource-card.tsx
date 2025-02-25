@@ -18,7 +18,7 @@ const ResourceCard = ({
     <Card
       radius="sm"
       shadow="sm"
-      className="hover:scale-105 h-full duration-200 border-b border-ars-cyan pb-10 max-w-96"
+      className="md:hover:scale-105 h-full duration-200 border-b border-ars-cyan pb-10 max-w-96"
     >
       <Image
         radius="lg"
@@ -50,11 +50,12 @@ const ResourceCard = ({
           <Button
             as={Link}
             href="/blogs"
+            size="sm"
             isIconOnly
             radius="full"
-            className="bg-ars-cyan-60 text-xs md:text-sm text-white font-medium "
+            className="bg-ars-cyan-60 text-lg text-white "
           >
-            {ICONS.arrow_right}
+            {ICONS.arrow_right_big}
           </Button>
         </div>
       </CardFooter>
