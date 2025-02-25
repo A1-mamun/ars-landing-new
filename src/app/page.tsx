@@ -10,8 +10,17 @@ import {
   Solutions,
   WarehouseRef,
 } from "@/sections";
+import { client } from "@/utils/contentful/contentful";
 
-export default function Home() {
+const fetchBlogs = async () => {
+  const result = await client.getEntries({
+    content_type: "blog", // Replace with your actual content type ID
+  });
+  return result.items || []; // Ensure an array is returned
+};
+
+export default async function Home() {
+  const Blogs = await fetchBlogs();
   return (
     <>
       <Header />
@@ -24,7 +33,7 @@ export default function Home() {
         <WarehouseRef />
         {/* <ARSIndustry /> */}
         {/* <Clients /> */}
-        <LatestResources />
+        <LatestResources blogs={Blogs} />
       </main>
     </>
   );

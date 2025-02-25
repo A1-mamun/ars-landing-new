@@ -8,11 +8,13 @@ const ResourceCard = ({
   img,
   category,
   time,
+  linkTo,
 }: {
   title: string;
   img: string;
   category: string;
-  time: string;
+  time: number;
+  linkTo: string;
 }) => {
   return (
     <Card
@@ -38,7 +40,7 @@ const ResourceCard = ({
           </div>
           <div className="text-cyan-blue-50 uppercase text-xs font-medium flex items-center gap-1">
             {ICONS.dot}
-            {time}
+            {time} min read
           </div>
         </div>
         <h2 className="text-lg text-indigo font-medium">{title}</h2>
@@ -49,7 +51,7 @@ const ResourceCard = ({
           <p className="font-medium">Read More</p>
           <Button
             as={Link}
-            href="/blogs"
+            href={linkTo}
             size="sm"
             isIconOnly
             radius="full"

@@ -1,6 +1,15 @@
 import { Header, BlogsHero, GetInTouch, Resources } from "@/sections";
+import { client } from "@/utils/contentful/contentful";
 
-const Blogs = () => {
+const fetchBlogs = async () => {
+  const result = await client.getEntries({
+    content_type: "blog", // Replace with your actual content type ID
+  });
+  return result.items || []; // Ensure an array is returned
+};
+const Blogs = async () => {
+  const Blogs = await fetchBlogs();
+  console.log(Blogs);
   return (
     <>
       <Header />
@@ -13,8 +22,8 @@ const Blogs = () => {
         }}
       >
         <div className=" h-full">
-          <BlogsHero />
-          <Resources />
+          <BlogsHero blogs={Blogs} />
+          <Resources blogs={Blogs} />
           <GetInTouch />
         </div>
       </main>

@@ -15,7 +15,7 @@ const BlogCard = ({
   img: string;
   category: string;
   description: string;
-  time: string;
+  time: number;
   linkTo: string;
 }) => {
   return (
@@ -36,9 +36,9 @@ const BlogCard = ({
           <p>{description}</p>
         </div>
         <div className="flex justify-between items-center">
-          <p className="text-ars-cyan font-medium">
+          <p className="text-ars-cyan font-medium uppercase">
             {category} <br />
-            <span className="text-[#67829E]">{time}</span>
+            <span className="text-[#67829E] lowercase">{time} min read</span>
           </p>
           <Button
             as={Link}

@@ -2,9 +2,16 @@
 import { Button, Image } from "@nextui-org/react";
 import { ICONS } from "@/utils/icons";
 import { useState } from "react";
-import { blogsResourcesData } from "@/data";
 import Link from "next/link";
-const BlogsHero = () => {
+
+import { Blog } from "@/utils/dataTypes/types";
+
+interface BlogsProps {
+  blogs: Blog[];
+}
+
+const BlogsHero = ({ blogs }: BlogsProps) => {
+  const blogsResourcesData = blogs;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleLeftClick = () => {
@@ -47,28 +54,31 @@ const BlogsHero = () => {
           </Button>
         </div>
 
-        <div className="bg-[#FFFFFF33] p-4 md:p-6 lg:p-8 rounded-3xl ">
+        <div className="bg-[#FFFFFF33] p-4 md:p-6 lg:p-8 rounded-3xl w-full ">
           <Image
-            src={currentData.img}
+            src={currentData.fields.featuredImage.fields.file.url}
             width="100%"
+            height={500}
             alt="hero image"
             className="rounded-3xl border-t-4 border-ars-cyan h-[200px] md:h-[350px] lg:h-[450px] xl:h-[500px] w-full"
           />
           <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-deep-blue mt-5 md:mt-6 mb-3 md:mb-4">
-            {currentData.title}
+            {currentData.fields.title}
           </h1>
           <div className="flex flex-col lg:flex-row gap-10 justify-between items-end">
             <p className="text-[#1D2227] text-sm md:text-base w-full lg:w-3/4">
-              {currentData.description}
+              {currentData.fields.content.content[0].content[0].value}
             </p>
             <div className="flex gap-10 items-center justify-between w-full lg:w-1/4">
-              <p className="text-deep-blue font-medium">
-                {currentData.category} <br />
-                <span className="text-[#67829E]">{currentData.time}</span>
+              <p className="text-deep-blue font-medium uppercase">
+                {currentData.fields.category} <br />
+                <span className="text-[#67829E] lowercase">
+                  {currentData.fields.readTime} min read
+                </span>
               </p>
               <Button
                 as={Link}
-                href={`/blogs/${currentData.id}`}
+                href={`/blogs/${currentData.fields.slug}`}
                 isIconOnly
                 radius="full"
                 className="bg-ars-cyan-60 text-deep-blue font-medium "

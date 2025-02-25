@@ -309,7 +309,24 @@ export const resourcesData = [
 ];
 
 //Shared resources section categories
-export const resourcesCategories = ["All", "News", "Blogs", "Case Study"];
+export const resourcesCategories = [
+  {
+    name: "All",
+    value: "all",
+  },
+  {
+    name: "News",
+    value: "news",
+  },
+  {
+    name: "Blogs",
+    value: "blog",
+  },
+  {
+    name: "Case Study",
+    value: "case-study",
+  },
+];
 
 // Career page career joblist data
 export const careersJobList = [
