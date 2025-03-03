@@ -45,6 +45,13 @@ import Resources from "./blogs/resources";
 // prikvacy policy sections
 import PrivacyPolicy from "./policy/privacy-policy";
 
+// automation sections
+import AutomationHero from "./automation/automation-hero";
+import ClientConsultation from "./automation/client-consultation";
+import OurBenefits from "./automation/our-benefits";
+import JoinOurTeamAutomation from "./automation/join-our-team";
+import OurSolutions from "./automation/our-solutions";
+
 export {
   Footer,
   Hero,
@@ -76,4 +83,9 @@ export {
   BlogsHero,
   Resources,
   PrivacyPolicy,
+  AutomationHero,
+  ClientConsultation,
+  OurBenefits,
+  JoinOurTeamAutomation,
+  OurSolutions,
 };

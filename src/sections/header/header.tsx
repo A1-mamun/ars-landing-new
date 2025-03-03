@@ -67,7 +67,10 @@ const Header = () => {
                   : "opacity-100 duration-1000"
               }`}
             >
-              <Link href="/">
+              <Link
+                href="/"
+                className={isScrolled ? "select-none pointer-events-none" : ""}
+              >
                 <Image src={Logo} alt="ARS" className="w-28" />
               </Link>
             </div>

@@ -45,7 +45,7 @@
     @apply sm:pb-24 pb-12;
   }
   .padding-responsive {
-    @apply px-5 md:px-10 lg:px-16 xl:px-24 2xl:px-36 3xl:px-44 py-10 lg:py-14 xl:py-20;
+    @apply px-3 xxs:px-5 md:px-10 lg:px-16 xl:px-24 2xl:px-36 3xl:px-44 py-10 lg:py-14 xl:py-20;
   }
 }
 

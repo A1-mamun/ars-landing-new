@@ -7,6 +7,7 @@ import ResumeButton from "./career/resume-button";
 import BlogReadButton from "./blog-card/blog-read-button";
 import MobileRobotButton from "./home/mobile-robot-button";
 import BlogPdf from "./blog-card/blog-pdf";
+import SolutionsCarousel from "./solutions-carousel/SolutionsCarousel";
 
 export {
   ResourceCard,
@@ -18,4 +19,5 @@ export {
   BlogReadButton,
   MobileRobotButton,
   BlogPdf,
+  SolutionsCarousel,
 };

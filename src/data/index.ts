@@ -711,3 +711,99 @@ export const privacyPolicy: PrivacyPolicyData = {
     },
   ],
 };
+
+// automation page our benefits data
+export const ourBenefitsData = [
+  "We offer cutting-edge robotic automation solutions that boost efficiency, reduce costs, and ensure precision in every operation",
+  "Working with ARS means partnering with industry experts dedicated to optimizing your workflow with smart, scalable automation",
+  "From end-of-line operations to advanced robotic systems, we deliver automation tailored to your industry's needs",
+  "With our lifetime support and future-ready robotics, we help businesses stay ahead in an increasingly automated world.",
+];
+
+// automation page our benefits card data
+export const ourBenefitsCardData = [
+  {
+    title: "Increased Efficiency & Productivity",
+    description:
+      "Automate complex and repetitive tasks with precision. Reduce cycle times and increase production output.",
+  },
+
+  {
+    title: "Lifetime Support & Service",
+    description:
+      "24/7 technical assistance and regular maintenance. Ongoing software updates and system upgrades for long-term reliability.",
+  },
+  {
+    title: "End-of-Line Automation for Seamless Operations",
+    description:
+      "Fully automated packing, labelling, sorting, and palletising. Improve final-stage processing with robotic handling.",
+  },
+  {
+    title: "Scalable & Future-Ready Automation",
+    description:
+      "Custom robotic solutions tailored to your industry needs. Expandable automation systems that grow with your business.",
+  },
+];
+
+// our solutions card data
+export const ourSolutionsCardData = [
+  {
+    title: "Robotics",
+    description:
+      "Advanced robotic systems that combine industrial robots, vision systems, AMR/AGV solutions, and precision grippers to automate manufacturing processes. Our robotics solutions enhance productivity, ensure consistent quality, and handle complex assembly tasks with precision.",
+    buttonData: ["Vision Systems", "AMR/AGV", "Industrial Robots", "Grippers"],
+  },
+  {
+    title: "IIOT",
+    description:
+      "Smart factory solutions that connect machines, sensors, and systems to enable real-time monitoring, predictive maintenance, and data-driven decision making. Our IIoT infrastructure combines edge computing with intelligent sensors to create a responsive, efficient manufacturing environment.",
+    buttonData: [
+      "Predictive Maintenance",
+      "Robotics Monitoring",
+      "Smart Servers",
+      "Data Analysis",
+      "Edge Computing",
+    ],
+  },
+  {
+    title: "HMI",
+    description:
+      "Complete turnkey automation solutions for manufacturing processes, including custom production lines and material handling systems. We integrate various automation components to create seamless, efficient production flows that optimize output and reduce operational costs.",
+    buttonData: ["System Control", "Alarm Handling", "Data Acquisition"],
+  },
+  {
+    title: "Automation Line",
+    description:
+      "Industrial control systems that serve as the backbone of automation, managing equipment through digital and analog I/O interfaces. Our PLC solutions provide reliable process control, supporting everything from basic machine operations to complex manufacturing sequences.",
+    buttonData: ["Manufacturing Line", "Production Line"],
+  },
+  {
+    title: "PLC",
+    description:
+      "Software solutions that bridge the gap between plant floor operations and business systems, providing real-time production scheduling, quality management, and performance analysis. Our MES implementations help optimize production efficiency and maintain quality standards.",
+    buttonData: ["Process Control", "VFDs", "Digital I/O", "Analog I/O"],
+  },
+  {
+    title: "MES",
+    description:
+      "Interactive control systems that allow operators to monitor and control automated processes through intuitive interfaces. Our HMI solutions feature advanced alarm handling, system control capabilities, and data acquisition tools, making complex operations manageable and efficient.",
+    buttonData: [
+      "Performance Analysis",
+      "Cobots",
+      "Production Scheduling",
+      "Inventory Management",
+      "Quality Management",
+    ],
+  },
+];
+
+// client consultation animation data
+export const clientConsultationData = [
+  "Manufacturing",
+  "Production",
+  "Factories",
+  "Intralogistics",
+  "Warehouse",
+  "Packaging",
+  "Quality Control",
+];

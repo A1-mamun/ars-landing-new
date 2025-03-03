@@ -58,6 +58,8 @@ export default {
         "deep-blue-5": "#0B1E590D",
         "midnight-blue": "#030D2D",
         "midnight-purple": "#090712",
+        "brand-white": "#F6FBFD",
+        "brand-black": "#212529",
       },
     },
   },

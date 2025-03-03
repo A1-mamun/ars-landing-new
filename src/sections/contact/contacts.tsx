@@ -44,9 +44,9 @@ const Contacts = () => {
               <br />
               enquiries
             </h5>
-            <p className="hidden xxs:inline">inquires@arsystems.org</p>
+            <p className="hidden xxs:inline">inquiries@arsystems.org</p>
             <p className="inline xxs:hidden">
-              inquires@
+              inquiries@
               <br />
               arsystems.org
             </p>
