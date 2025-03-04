@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Blog } from "@/utils/dataTypes/types";
+import Link from "next/link";
 
 interface BlogsProps {
   blogs: Blog[];
@@ -96,14 +97,15 @@ const LatestResources = ({ blogs }: BlogsProps) => {
           {resources && resources.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 lg:gap-5 xl:gap-8 2xl:gap-10 3xl:gap-12 4xl:gap-16">
               {resources.map((resource, idx) => (
-                <ResourceCard
-                  key={idx}
-                  title={resource.fields.title}
-                  img={resource.fields.thumbnail.fields.file.url}
-                  category={resource.fields.category}
-                  time={resource.fields.readTime}
-                  linkTo={`/blogs/${resource.fields.slug}`}
-                />
+                <Link href={`/blogs/${resource.fields.slug}`} key={idx}>
+                  <ResourceCard
+                    title={resource.fields.title}
+                    img={resource.fields.thumbnail.fields.file.url}
+                    category={resource.fields.category}
+                    time={resource.fields.readTime}
+                    linkTo={`/blogs/${resource.fields.slug}`}
+                  />
+                </Link>
               ))}
             </div>
           ) : (

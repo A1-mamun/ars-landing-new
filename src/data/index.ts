@@ -20,7 +20,10 @@ export const navLinks = [
     name: "Careers",
     link: "/careers",
   },
-
+  {
+    name: "Blogs",
+    link: "/blogs",
+  },
   {
     name: "Get in Touch",
     link: "/contact",
