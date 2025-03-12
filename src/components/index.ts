@@ -8,6 +8,9 @@ import BlogReadButton from "./blog-card/blog-read-button";
 import MobileRobotButton from "./home/mobile-robot-button";
 import BlogPdf from "./blog-card/blog-pdf";
 import SolutionsCarousel from "./solutions-carousel/SolutionsCarousel";
+import CoreFunctionalityCard from "./core-functionality-card/core-functionality-card";
+import FleetManagementCard from "./fleet-management-card/fleet-management-card";
+import FleetManagementCardReverse from "./fleet-management-card-reverse/fleet-management-card-reverse";
 
 export {
   ResourceCard,
@@ -20,4 +23,7 @@ export {
   MobileRobotButton,
   BlogPdf,
   SolutionsCarousel,
+  CoreFunctionalityCard,
+  FleetManagementCard,
+  FleetManagementCardReverse,
 };

@@ -53,6 +53,12 @@ import OurBenefits from "./automation/our-benefits";
 import JoinOurTeamAutomation from "./automation/join-our-team";
 import OurSolutions from "./automation/our-solutions";
 
+// ArsFM sections
+import ArsFMHero from "./arsFM/arsFM-hero";
+import CoreFunctionality from "./arsFM/core-functionality";
+import FleetManagement from "./arsFM/fleet-management";
+import Feature from "./arsFM/feature";
+
 export {
   Footer,
   Hero,
@@ -90,4 +96,8 @@ export {
   JoinOurTeamAutomation,
   OurSolutions,
   Faq,
+  ArsFMHero,
+  CoreFunctionality,
+  FleetManagement,
+  Feature,
 };

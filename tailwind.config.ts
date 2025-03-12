@@ -64,6 +64,7 @@ export default {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        "dm-sans": ["DM Sans", "sans-serif"],
       },
     },
   },

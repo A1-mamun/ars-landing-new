@@ -836,3 +836,81 @@ export const faqContents = [
       "There are different ways to partner with us. If you are a robotics systems manufacturer, you can join our ARS ecosystem. If you are a systems integrator looking to leverage the capabilities of the ARS Platform, you can explore our various commercial engagement modes.. Check out the Partners section to find out more!",
   },
 ];
+
+// core functionality data
+export const coreFunctionalityData = [
+  {
+    title: "Smart Task Assignment",
+    description:
+      "Dynamically assigns tasks to the most suitable AMR or AGV, using opportunity charging to maintain fleet efficiency.",
+  },
+  {
+    title: "Live Fleet Tracking",
+    description:
+      "Enables real-time visualization of AMR and AGV locations, task progress, and statuses through an interactive dashboard.",
+  },
+  {
+    title: "No-Code Platform",
+    description:
+      "Simplifies fleet setup and operation with an intuitive interface for creating and managing complex workflows without coding.",
+  },
+  {
+    title: "Universal Fleet Compatibility",
+    description:
+      "Ensures seamless traffic management for AMRs and AGVs from any manufacturer under a single unified platform.",
+  },
+  {
+    title: "Effortless System Integration",
+    description:
+      "Provides standard REST API documentation for easy integration with external software, while SyncOS™ Integrator connects to robotic and automation systems.",
+  },
+  {
+    title: "Comprehensive Data Insights",
+    description:
+      "Maintains task and error logs for up to a year, allowing for thorough analysis. Data is filterable and exportable to CSV files for in-depth reviews.",
+  },
+];
+
+// fleet management data
+export const fleetManagementData = [
+  {
+    title:
+      "Streamline operations and enhance efficiency with ARS automation systems.",
+    subtitle: "Smart Task Assignment",
+    description:
+      "ARS FM intelligently assigns tasks to the most suitable AMR (Autonomous Mobile Robot) or AGV (Automated Guided Vehicle) based on real-time fleet conditions, workload distribution, and efficiency parameters. The system leverages opportunity charging to ensure that robots remain operational without unnecessary downtime, maximizing productivity while reducing energy consumption. This automated task allocation reduces human intervention and enhances workflow precision.",
+  },
+
+  {
+    title: "Gain real-time visibility and streamline operations.",
+    subtitle: "Live Fleet Tracking",
+    description:
+      "The interactive dashboard provides real-time visibility into every AMR and AGV in operation, displaying live location updates, task progress, and fleet status. Operators can monitor performance metrics, predict bottlenecks, and take immediate action when issues arise. This level of transparency ensures better control over logistics, warehouse automation, and manufacturing processes, leading to increased efficiency and reduced operational risks.",
+  },
+  {
+    title:
+      "Easily create and manage workflows without coding, using a simple interface.",
+    subtitle: "No-Code Platform",
+    description:
+      "ARS FM simplifies automation with a user-friendly, no-code interface that allows operators to create, modify, and manage workflows without requiring programming expertise. Businesses can easily customize fleet behaviors, set operational rules, and configure automation sequences with a drag-and-drop functionality, reducing setup time and making fleet management accessible to all team members.",
+  },
+  {
+    title:
+      "Works with AMRs and AGVs from any manufacturer, all managed in one place.",
+    subtitle: "Universal Fleet Compatibility",
+    description:
+      "Designed for seamless integration, ARS FM enables businesses to manage mixed fleets of AMRs and AGVs from different manufacturers within a single, unified platform. With advanced traffic management and communication protocols, it ensures smooth coordination across all robotic units, preventing congestion, optimizing path planning, and maintaining operational harmony across diverse automation systems.",
+  },
+  {
+    title: "Connects easily with external systems and robotic solutions.",
+    subtitle: "Effortless System Integration",
+    description:
+      "ARS FM is designed to seamlessly integrate with existing business software, including ERP, WMS, and MES systems, through standard REST APIs. The SyncOS™ Integrator allows smooth data exchange between robotic systems and enterprise applications, ensuring a connected, data-driven approach to fleet management. This enables businesses to synchronize operations across departments, reducing manual work and improving overall efficiency.",
+  },
+  {
+    title: "Keep detailed task logs and export them for easy analysis.",
+    subtitle: "Comprehensive Data Insights",
+    description:
+      "ARS FM collects and stores task history, error logs, and performance analytics for up to a year, allowing businesses to conduct in-depth operational analysis. The system offers advanced filtering options, allowing users to extract specific data, generate reports, and export CSV files for further evaluation. These insights empower decision-makers to optimize fleet performance, identify inefficiencies, and implement data-driven improvements to enhance productivity and cost savings.",
+  },
+];
